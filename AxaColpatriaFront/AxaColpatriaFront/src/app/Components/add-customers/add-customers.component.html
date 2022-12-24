@@ -1,0 +1,20 @@
+<h3>Crear Customers</h3>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" class="form-control" id="name" name="name"
+                  [(ngModel)]="name" required>
+              </div>
+              <div class="form-group">
+                  <label for="age">Edad</label>
+                  <input type="number" class="form-control" id="age" name="age"
+                  [(ngModel)]="age" required>
+              </div>
+              <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+          </form>
+      </div>
+  </div>
+</div>
