@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClienteModel } from 'src/app/Model/cliente-model';
 import { ClienteServiceService } from 'src/app/Service/cliente-service.service';
 
@@ -13,7 +14,7 @@ export class ClientesComponent implements OnInit {
   clientes: any[] = [];
 
 
-  constructor(private _clienteService: ClienteServiceService) { }
+  constructor(private _clienteService: ClienteServiceService,private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerClientes();
@@ -25,5 +26,8 @@ export class ClientesComponent implements OnInit {
     );
   }
 
+  public add(){
+    this.router.navigate(['add']);
+  }
 
 }
